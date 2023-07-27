@@ -1,3 +1,4 @@
+import GameComponents.QuizQuestion;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -9,7 +10,7 @@ public class QuizQuestionTest {
 
     @Before
     public void before(){
-        question1 = new QuizQuestion(1, "What is Superman's secret identity?");
+        question1 = new QuizQuestion(1, "What is Superman's secret identity?", "Clark Kent is a mild-mannered reporter for a major metropolitan newspaper.");
     }
 
     @Test
@@ -45,5 +46,22 @@ public class QuizQuestionTest {
         question1.addAnswerOption('b', "Clark Kent");
         question1.setCorrectAnswer('b');
         assertEquals('b', question1.getCorrectAnswer());
+    }
+
+    @Test
+    public void hasPostQuestionInfo(){
+        String expected = "Clark Kent is a mild-mannered reporter for a major metropolitan newspaper.";
+        assertEquals(expected, question1.getPostQuestionInfo());
+    }
+
+    @Test
+    public void startAnsweredAsFalse(){
+        assertEquals(false, question1.getAnsweredStatus());
+    }
+
+    @Test
+    public void canMarkAsAnswered(){
+        question1.markAsAnswered();
+        assertEquals(true, question1.getAnsweredStatus());
     }
 }
