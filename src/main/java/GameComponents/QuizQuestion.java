@@ -42,8 +42,8 @@ public class QuizQuestion {
         return this.correctAnswer;
     }
 
-    public void addAnswerOption(char optionLetter, String optionText) {
-        AnswerOption option = new AnswerOption(optionLetter, optionText);
+    public void addAnswerOption(AnswerOption answerOption) {
+        AnswerOption option = new AnswerOption(answerOption.getOptionLetter(), answerOption.getOptionText());
         this.options.add(option);
     }
 
