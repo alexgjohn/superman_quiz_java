@@ -42,6 +42,11 @@ public class QuizGame {
         System.out.println(currentScore);
     }
 
+    public void giveFinalScore(){
+        String finalScore = String.format("Your final score was %s out of 10.", this.getUserScore());
+        System.out.println(finalScore);
+    }
+
     public boolean allQuestionsAnswered(){
         boolean status = false;
         for (QuizQuestion question:this.questions){
@@ -81,6 +86,8 @@ public class QuizGame {
                 giveCurrentScore();
             } else {
                 System.out.println("That's the end of the quiz!");
+                giveFinalScore();
+
             }
         }
     }
