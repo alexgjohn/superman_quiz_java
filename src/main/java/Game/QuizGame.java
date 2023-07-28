@@ -70,6 +70,8 @@ public class QuizGame {
             userAnswersCorrectly();
         } else if (userAnswer == 'a' || userAnswer == 'b' || userAnswer == 'c' || userAnswer == 'd') {
             System.out.println("I'm afraid that's incorrect.");
+            String correction = String.format("The correct answer was %s", question.getCorrectAnswer());
+            System.out.println(correction);
         } else {
             System.out.println("Please enter a valid answer");
             askQuestion(question);
