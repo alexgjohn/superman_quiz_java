@@ -4,6 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 
 public class QuizGameTest {
 
@@ -40,12 +41,8 @@ public class QuizGameTest {
 
     @Test
     public void questionsStartUnanswered(){
-        assertEquals(false, game.getQuestions().get(0).getAnsweredStatus());
+        assertFalse(game.getQuestions().get(0).getAnsweredStatus());
     }
 
-//    @Test
-//    public void canMarkQuestionAsAnswered(){
-//        game.askQuestion(question1);
-//        assertEquals(true, game.getQuestions().get(0).getAnsweredStatus());
-//    }
+
 }
