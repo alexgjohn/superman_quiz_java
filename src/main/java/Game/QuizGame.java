@@ -55,8 +55,7 @@ public class QuizGame {
     }
 
     public void askQuestion(QuizQuestion question) {
-        String questionToAsk = String.format("Question %s: %s", question.getQuestionNumber(), question.getQuestionText());
-        System.out.println(questionToAsk);
+        question.ask();
         Scanner input = new Scanner(System.in);
         char userAnswer = input.next().toLowerCase().charAt(0); // Read the first character of user input
         input.nextLine(); // Consume the remaining newline character from the input

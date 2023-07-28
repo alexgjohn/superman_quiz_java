@@ -18,4 +18,9 @@ public class AnswerOption {
     public String getOptionText() {
         return this.optionText;
     }
+
+    public void formatAnswerOption(){
+        String formattedOption = String.format("%s) %s", this.optionLetter, this.optionText);
+        System.out.println(formattedOption);
+    }
 }

@@ -43,8 +43,7 @@ public class QuizQuestion {
     }
 
     public void addAnswerOption(AnswerOption answerOption) {
-        AnswerOption option = new AnswerOption(answerOption.getOptionLetter(), answerOption.getOptionText());
-        this.options.add(option);
+        this.options.add(answerOption);
     }
 
     public void setCorrectAnswer(char optionLetter) {
@@ -61,5 +60,13 @@ public class QuizQuestion {
 
     public void markAsAnswered() {
         this.hasBeenAnswered = true;
+    }
+
+    public void ask(){
+        String questionToAsk = String.format("Question %s: %s", this.questionNumber, this.questionText);
+        System.out.println(questionToAsk);
+        for (AnswerOption option:this.options){
+            option.formatAnswerOption();
+        }
     }
 }
